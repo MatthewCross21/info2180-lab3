@@ -1,3 +1,4 @@
+//Exercise 1
 document.addEventListener("DOMContentLoaded", function() {
     // Select all divs within the board and add the 'square' class
     const boxes = document.querySelectorAll("#board div");
@@ -5,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     boxes.forEach((square) => {
       square.classList.add("square");
 
+       //Exercise 3
           //events to add and remove hover effect
     square.addEventListener("mouseover", function() {
         square.classList.add("hover");
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
-
+  //Exercise 2
   document.addEventListener("DOMContentLoaded", function() {
     // Select all divs within the board and add the 'square' class
     const boxes = document.querySelectorAll("#board div");
@@ -42,11 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  //Exercise 4 and 5
   document.addEventListener("DOMContentLoaded", function() {
     const boxes = document.querySelectorAll("#board div");
     const State = Array(9).fill(null); // Array to track X and O state for each square
     let Player1 = "X"; // Start with player X
     const statusDiv = document.getElementById("status"); //status div
+    const newGameButton = document.querySelector(".btn");
     
     // Define possible combinations to win
     const winningCombinations = [
@@ -98,7 +102,26 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       });
+      
     });
+    newGameButton.addEventListener("click", function() {
+        // Reset game state array
+        State.fill(null);
+        
+        // Clear each square
+        boxes.forEach((square) => {
+          square.textContent = "";         // Clears displayed text
+          square.classList.remove("X", "O"); // Clears the game space
+        });
+        
+        // Reset the status message
+        statusDiv.textContent = "Move your mouse over a square and click to play an X or an O.";
+        statusDiv.classList.remove("you-won"); // Remove the winner style
+        
+        // Sets current player to X
+        Player1 = "X";
+      });
+
   });
   
 
