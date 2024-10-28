@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
           square.textContent = Player1;
           square.classList.add(Player1);
   
-          // Alternate between X and O
+          // Alternate between X and O and does not allow cheating
           Player1 = Player1 === "X" ? "O" : "X";
         }
       });
