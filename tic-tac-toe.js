@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
     squares.forEach((square) => {
       square.classList.add("square");
+
+          //events to add and remove hover effect
+    square.addEventListener("mouseover", function() {
+        square.classList.add("hover");
+      });
+      square.addEventListener("mouseout", function() {
+        square.classList.remove("hover");
+      });
     });
   });
   
@@ -35,5 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  
+
+
+
+
    
