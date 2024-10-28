@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
     });
     newGameButton.addEventListener("click", function() {
-        // Reset game state array
+        // Reset state array
         State.fill(null);
         
         // Clear each square
